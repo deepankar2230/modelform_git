@@ -6,6 +6,9 @@ from django.http import HttpResponse
 # Create your views here.
 
 def home(request):
+    return render(request, 'home.html')
+
+def register(request):
     UF = UserForm()
     d = {'UF': UF}
     if request.method == 'POST':
@@ -25,7 +28,4 @@ def home(request):
             ) 
             return HttpResponse('Done............')
         return HttpResponse('invalid data')
-    return render(request, 'home.html', d)
-
-def register(request):
-    return render(request,register.html)
+    return render(request,'register.html', d)
