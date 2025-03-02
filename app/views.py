@@ -26,3 +26,6 @@ def home(request):
             return HttpResponse('Done............')
         return HttpResponse('invalid data')
     return render(request, 'home.html', d)
+
+def register(request):
+    return render(request,register.html)
